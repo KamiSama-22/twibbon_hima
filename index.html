@@ -26,7 +26,7 @@
         </a>
     </div>
 
-    <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative pb-20 rounded-xl">
+    <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl relative rounded-xl">
         <div class="px-5 py-5 mt-10 mb-10">
 
 <!-- LANGKAH 1: PILIH FOTO & PREVIEW -->
@@ -57,57 +57,97 @@
             </div>
 
             <div>
-                <div class="space-y-3">
-                    
-                    <!-- Slider Zoom -->
-                    <div id="zoom-container" class="hidden px-2 mb-4">
-                        <div class="flex justify-between text-xs font-bold text-gray-500 mb-1">
-                            <span>- Perkecil</span>
-                            <span>Geser untuk Zoom</span>
-                            <span>Perbesar +</span>
-                        </div>
-                        <input type="range" id="zoom-slider" min="0.2" max="3" step="0.01" value="1" class="w-full cursor-pointer">
+            </div>
+            <div class="space-y-3">
+                
+                <!-- Slider Zoom -->
+                <div id="zoom-container" class="hidden px-2 mb-4">
+                    <div class="flex justify-between text-xs font-bold text-gray-500 mb-1">
+                        <span>- Perkecil</span>
+                        <span>Geser untuk Zoom</span>
+                        <span>Perbesar +</span>
                     </div>
-
-                    <input type="file" id="upload-foto" accept="image/*" class="hidden">
-                    <label for="upload-foto" class="flex items-center justify-center w-full bg-blue-600 text-white text-center py-3.5 rounded-full font-bold cursor-pointer hover:bg-blue-700 active:bg-blue-800 transition shadow-lg shadow-blue-200">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        Pilih Foto
-                    </label>
-
-                    <!-- Tombol Unduh Langsung -->
-                    <button id="btn-unduh-langsung" disabled class="w-full bg-gray-300 text-gray-500 py-3.5 rounded-full font-bold cursor-not-allowed transition shadow-lg flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                        Unduh Foto
-                    </button>
+                    <input type="range" id="zoom-slider" min="0.2" max="3" step="0.01" value="1" class="w-full cursor-pointer">
                 </div>
+        
+                <input type="file" id="upload-foto" accept="image/*" class="hidden">
+<!-- Wadah / Track (Cekung ke dalam) -->
+<!-- Wadah / Track (Dibuat bayangannya lebih dalam/tegas) -->
+<!-- Wadah / Track -->
+
+    <!-- Tombol dengan Hover Background Biru Pastel -->
+    <label for="upload-foto" class="flex items-center justify-center w-full bg-gray-100 hover:bg-blue-50/80 text-gray-700 hover:text-blue-700 text-center py-3 rounded-full font-bold cursor-pointer shadow-[5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] hover:shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] hover:scale-[1.02] active:scale-100 active:shadow-[inset_3px_3px_6px_#bebebe,inset_-3px_-3px_6px_#ffffff] transition-all duration-300 ease-out">
+        <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        Pilih Foto
+    </label>
+
+        
+                <!-- Tombol Unduh Langsung -->
+<button id="btn-unduh-langsung" disabled class="w-full bg-gray-200 text-gray-400 py-3.5 rounded-full font-bold flex items-center justify-center transition-all duration-300 ease-out cursor-not-allowed shadow-none enabled:bg-gray-100 enabled:text-gray-700 enabled:cursor-pointer enabled:shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] enabled:hover:shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] enabled:hover:bg-blue-50/80 enabled:hover:text-blue-700 enabled:hover:scale-[1.02] enabled:active:scale-100">
+    <svg class="w-5 h-5 mr-2 text-gray-400 enabled:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+    </svg>
+    Unduh Foto
+</button>
             </div>
-
-            <!-- Langkah 2 (Bagian Caption tetap saya biarkan agar kode asli Anda tidak ada yang hilang) -->
-            <div id="step-2" class="hidden mt-6">
-                <h3 class="font-bold text-lg mb-3">Selesai! Unduh Twibbon-mu</h3>
-                <!-- Tombol Aksi -->
-                <div class="flex gap-2 mb-6">
-                    <button id="btn-unduh" class="flex-1 bg-blue-600 text-white py-3 rounded-full font-bold hover:bg-blue-700 transition flex items-center justify-center">
-                        <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                        Unduh Foto
-                    </button>
-                    <button id="btn-kembali" class="w-12 h-12 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full font-bold hover:bg-gray-200 transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    </button>
-                </div>
-                <!-- Area Caption -->
-                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100 relative">
-                    <p class="text-xs font-bold text-blue-600 mb-2 uppercase tracking-wide">Caption Postingan</p>
-                    <p id="caption-teks" class="text-sm text-gray-700 leading-relaxed mb-4">
-                        Halo semuanya! Saya siap bergabung di Funcamp 2026. Mari kita ciptakan momen seru bersama dan jalin pertemanan baru! 🏕️✨<br><br>#Funcamp2026 #AcaraSeru #SiapBerangkat
-                    </p>
-                    <button id="btn-salin" class="w-full bg-white border border-gray-300 text-gray-700 py-2.5 rounded-lg text-sm font-bold hover:bg-gray-50 transition flex items-center justify-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        Salin Caption
-                    </button>
-                </div>
+        </div>
+        
+        <!-- Langkah 2 (Bagian Caption tetap saya biarkan agar kode asli Anda tidak ada yang hilang) -->
+        <div id="step-2" class="hidden mt-6">
+            <h3 class="font-bold text-lg mb-3">Selesai! Unduh Twibbon-mu</h3>
+            <!-- Tombol Aksi -->
+            <div class="flex gap-2 mb-4">
+                <button id="btn-unduh" class="flex-1 bg-blue-600 text-white py-3 rounded-full font-bold hover:bg-blue-700 transition flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Unduh Foto
+                </button>
+                <button id="btn-kembali" class="w-12 h-12 flex items-center justify-center bg-gray-100 text-gray-700 rounded-full font-bold hover:bg-gray-200 transition">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                </button>
             </div>
+        <!-- KOTAK PREVIEW & TOMBOL SALIN CAPTION (Awalnya tersembunyi) -->
+    </div>
+    <div id="caption-container" class="hidden mt-4 p-4 bg-gray-50 border border-gray-200">
+<!-- Input untuk Nama Pengguna -->
+<!-- Input untuk Nama Pengguna -->
+<div class="mb-4">
+    <label class="block text-sm font-semibold text-gray-700 mb-1">Nama Kamu (Opsional):</label>
+    <input type="text" id="input-nama" placeholder="Ketik nama kamu di sini..." 
+        class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 text-sm transition">
+</div>
+
+<!-- Kotak Pratinjau Caption -->
+<div class="mb-4">
+    <label class="block text-sm font-semibold text-gray-700 mb-1">Caption:</label>
+    <textarea id="box-caption" rows="16" readonly
+        class="w-full p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-600 text-sm resize-none focus:outline-none">Petualangan baru telah menanti!
+
+Di alam bebas kita belajar tentang kebersamaan, kemandirian, dan solidaritas.
+
+Halo semuanya! Saya [Nama Kamu] dari D4 Teknik Informatika Universitas Harkat Negeri, menyatakan bahwa saya SIAP untuk ikut serta dan memeriahkan acara FUNCAMP! 
+
+Bagi saya, Funcamp bukan hanya sekadar tentang mendirikan tenda dan menyalakan api unggun. Ini adalah momen berharga untuk mempererat tali persaudaraan, melepaskan penat sejenak, dan menciptakan kenangan tak terlupakan bersama teman-teman seperjuangan. 
+Saya tidak sabar untuk berbagi tawa, cerita, dan pengalaman baru di tengah keindahan alam.   
+
+Mari kita sukseskan acara ini, jaga kelestarian alam, dan buat cerita seru bersama! 
+
+Are you ready for the fun? 
+Because I AM READY FOR FUNCAMP! 🔥🔥  
+
+Jangan lupa ikuti terus keseruan kami melalui:
+📸 Instagram: @hmpti_kmharkatnegeri
+✉️ Email: hmpinformatika@gmail.com
+▶️ YouTube: HMPTI PHB  
+
+#IReadyForFuncamp #Funcamp2026 #TeknikInformatika #UniversitasHarkatNegeri</textarea>
+</div>
+
+<!-- Tombol Salin Caption -->
+<button id="btn-salin" class="w-full bg-gray-100 hover:bg-blue-50/80 text-gray-700 hover:text-blue-700 py-3 rounded-full font-bold shadow-[4px_4px_8px_#bebebe,-4px_-4px_8px_#ffffff] hover:shadow-[10px_10px_20px_#bebebe,-10px_-10px_20px_#ffffff] hover:scale-[1.02] active:scale-100 active:shadow-[inset_2px_2px_4px_#bebebe] transition-all duration-300 ease-out flex items-center justify-center">
+    <svg class="w-5 h-5 mr-2 text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+    Salin Caption
+</button>
+</div>
 
         </div>
     </div>
