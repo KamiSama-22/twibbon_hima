@@ -11,26 +11,20 @@ const containerGantiFoto = document.getElementById('container-ganti-foto');
 const captionContainer = document.getElementById('caption-container');
 const captionText = document.getElementById('caption-text');
 const btnSalinCaption = document.getElementById('btn-salin-caption');
-const templateCaption = `Petualangan baru telah menanti!
-
-Di alam bebas kita belajar tentang kebersamaan, kemandirian, dan solidaritas.
-
-Halo semuanya!Saya [Nama Kamu] dari D4 Teknik Informatika Universitas Harkat Negeri, menyatakan bahwa saya SIAP untuk ikut serta dan memeriahkan acara FUNCAMP! 
-
-Bagi saya, Funcamp bukan hanya sekadar tentang mendirikan tenda dan menyalakan api unggun. Ini adalah momen berharga untuk mempererat tali persaudaraan, melepaskan penat sejenak, dan menciptakan kenangan tak terlupakan bersama teman-teman seperjuangan. 
-Saya tidak sabar untuk berbagi tawa, cerita, dan pengalaman baru di tengah keindahan alam.   
-
-Mari kita sukseskan acara ini, jaga kelestarian alam, dan buat cerita seru bersama! 
-
-Are you ready for the fun? 
-Because I AM READY FOR FUNCAMP! 🔥🔥  
-
-Jangan lupa ikuti terus keseruan kami melalui:
-📸 Instagram: @hmpti_kmharkatnegeri
-✉️ Email: hmpinformatika@gmail.com
-▶️ YouTube: HMPTI PHB  
-
-#IReadyForFuncamp #Funcamp2026 #TeknikInformatika #UniversitasHarkatNegeri`;
+const templateCaption = 
+    "Petualangan baru telah menanti!\n\n" +
+    "Di alam bebas kita belajar tentang kebersamaan, kemandirian, dan solidaritas.\n\n" +
+    "Halo semuanya! Saya [Nama] dari D4 Teknik Informatika Universitas Harkat Negeri, menyatakan bahwa saya SIAP untuk ikut serta dan memeriahkan acara FUNCAMP!\n\n" +
+    "Bagi saya, Funcamp bukan hanya sekadar tentang mendirikan tenda dan menyalakan api unggun. Ini adalah momen berharga untuk mempererat tali persaudaraan, melepaskan penat sejenak, dan menciptakan kenangan tak terlupakan bersama teman-teman seperjuangan.\n" +
+    "Saya tidak sabar untuk berbagi tawa, cerita, dan pengalaman baru di tengah keindahan alam.\n\n" +
+    "Mari kita sukseskan acara ini, jaga kelestarian alam, dan buat cerita seru bersama!\n\n" +
+    "Are you ready for the fun?\n" +
+    "Because I AM READY FOR FUNCAMP! 🔥🔥\n\n" +
+    "Jangan lupa ikuti terus keseruan kami melalui:\n" +
+    "📸 Instagram: @hmpti_kmharkatnegeri\n" +
+    "✉️ Email: hmpinformatika@gmail.com\n" +
+    "▶️ YouTube: HMPTI PHB\n\n" +
+    "#IReadyForFuncamp #Funcamp2026 #TeknikInformatika #UniversitasHarkatNegeri";
 const inputNama = document.getElementById('input-nama');
 const boxCaption = document.getElementById('box-caption');
 const btnSalin = document.getElementById('btn-salin');
@@ -203,38 +197,30 @@ btnUnduhLangsung.addEventListener('click', function() {
         link.click();
     };
 });
+// 1. Tampilkan teks ke textarea secara live dengan spasi yang rapi
+boxCaption.value = templateCaption;
+
 inputNama.addEventListener('input', function() {
     const nama = inputNama.value.trim();
-    
     if (nama !== "") {
-        // Jika user mengetik nama, ganti tulisan [Nama Kamu] dengan nama yang diketik
-        boxCaption.value = templateCaption.replace("[Nama Kamu]", nama);
+        boxCaption.value = templateCaption.replace("[Nama]", nama);
     } else {
-        // Jika dikosongkan, kembali seperti template awal
         boxCaption.value = templateCaption;
     }
 });
-// Tombol Salin Caption
-btnSalinCaption.addEventListener('click', function() {
-    const textToCopy = captionText.innerText;
-    
-    // Perintah menyalin teks ke clipboard perangkat
-    navigator.clipboard.writeText(textToCopy).then(() => {
-        const originalHTML = btnSalinCaption.innerHTML;
-        
-        // Ubah tombol sementara menjadi tanda sukses
-        btnSalinCaption.innerHTML = `
-            <svg class="w-4 h-4 mr-1.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Berhasil Disalin!
-        `;
-        btnSalinCaption.classList.remove('bg-gray-800', 'hover:bg-gray-900');
-        btnSalinCaption.classList.add('bg-green-600');
 
-        // Kembalikan tombol seperti semula setelah 2 detik
+// 2. Tombol Salin dengan format enter yang dijamin rapi
+btnSalin.addEventListener('click', function() {
+    const nama = inputNama.value.trim();
+    const teksFinal = templateCaption.replace("[Nama]", nama !== "" ? nama : "[Nama]");
+
+    navigator.clipboard.writeText(teksFinal).then(() => {
+        btnSalin.innerHTML = "✅ Caption Berhasil Disalin!";
+        btnSalin.classList.add("text-green-600", "bg-green-50/80");
+        
         setTimeout(() => {
-            btnSalinCaption.innerHTML = originalHTML;
-            btnSalinCaption.classList.remove('bg-green-600');
-            btnSalinCaption.classList.add('bg-gray-800', 'hover:bg-gray-900');
+            btnSalin.innerHTML = `<svg class="w-5 h-5 mr-2 text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg> Salin Caption`;
+            btnSalin.classList.remove("text-green-600", "bg-green-50/80");
         }, 2000);
     });
 });
