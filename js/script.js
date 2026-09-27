@@ -215,7 +215,7 @@ btnSalin.addEventListener('click', function() {
     const teksFinal = templateCaption.replace("[Nama]", nama !== "" ? nama : "[Nama]");
 
     navigator.clipboard.writeText(teksFinal).then(() => {
-        btnSalin.innerHTML = "✅ Caption Berhasil Disalin!";
+        btnSalin.innerHTML = "Caption Berhasil Disalin!";
         btnSalin.classList.add("text-green-600", "bg-green-50/80");
         
         setTimeout(() => {
