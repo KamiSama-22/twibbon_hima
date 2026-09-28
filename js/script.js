@@ -23,7 +23,7 @@ const templateCaption =
     "Jangan lupa ikuti terus keseruan kami melalui:\n" +
     "📸 Instagram: @himativ.harkatnegeri\n" +
     "✉️ Email: hmpinformatika@gmail.com\n" +
-    "▶️ YouTube: HMPTI PHB\n\n" +
+    "▶️ YouTube: HIMATIV UHN\n\n" +
     "#IReadyForFuncamp #Funcamp2026 #TeknikInformatika #UniversitasHarkatNegeri";
 const inputNama = document.getElementById('input-nama');
 const boxCaption = document.getElementById('box-caption');
