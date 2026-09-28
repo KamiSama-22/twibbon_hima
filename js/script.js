@@ -21,7 +21,7 @@ const templateCaption =
     "Are you ready for the fun?\n" +
     "Because I AM READY FOR FUNCAMP! 🔥🔥\n\n" +
     "Jangan lupa ikuti terus keseruan kami melalui:\n" +
-    "📸 Instagram: @hmpti_kmharkatnegeri\n" +
+    "📸 Instagram: @himativ.harkatnegeri\n" +
     "✉️ Email: hmpinformatika@gmail.com\n" +
     "▶️ YouTube: HMPTI PHB\n\n" +
     "#IReadyForFuncamp #Funcamp2026 #TeknikInformatika #UniversitasHarkatNegeri";
